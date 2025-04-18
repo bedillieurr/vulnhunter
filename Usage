@@ -1,0 +1,1 @@
+python main.py <target> [--ports <port_range>]
