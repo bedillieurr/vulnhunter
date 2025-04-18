@@ -36,3 +36,8 @@ pip install -r requirements.txt
 
 - python main.py scanme.nmap.org
 - python main.py 192.168.1.1 --ports 20-1000
+
+## 🛡️ Disclaimer
+
+This tool is intended for educational and authorized penetration testing only.
+You are responsible for your actions.
