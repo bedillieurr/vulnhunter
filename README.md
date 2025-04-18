@@ -26,6 +26,7 @@ Install them with:
 sudo apt update
 sudo apt install nmap python3-pip -y
 pip install -r requirements.txt
+```
 
 ⚡ Usage
 python main.py <target> [--ports <port_range>]
