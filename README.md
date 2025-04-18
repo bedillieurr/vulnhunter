@@ -27,13 +27,17 @@ Install them with:
 
 1. **Clone this repo:**
 ```bash
-git clone https://github.com/username/vulnhunt.git
+git clone https://github.com/bedillieurr/VulnHunt.git
+```
+```bash
 cd vulnhunt
 ```
 
 2. **Create a virtual environment (optional but recommended):**
 ```bash
 python3 -m venv venv
+```
+```bash
 source venv/bin/activate
 ```
 
