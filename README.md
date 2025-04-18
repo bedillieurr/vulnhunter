@@ -29,6 +29,7 @@ pip install -r requirements.txt
 ```
 
 ##⚡ Usage
+
 - python main.py <target> [--ports <port_range>]
 
 ## Examples:
