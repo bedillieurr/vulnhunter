@@ -1,21 +1,14 @@
 import nmap
 
-def scan_target(target, ports="1-1000"):
+def scan_ports(target):
     nm = nmap.PortScanner()
-    print(f"[+] Scanning {target} on ports {ports} ...")
-    nm.scan(hosts=target, arguments=f"-p {ports} -sV")
-
-    results = []
+    print(f"[*] Scanning {target} with Nmap...")
+    nm.scan(target, arguments="-sS -T4")
     for host in nm.all_hosts():
+        print(f"Host: {host} ({nm[host].hostname()})")
+        print(f"State: {nm[host].state()}")
         for proto in nm[host].all_protocols():
-            lport = nm[host][proto].keys()
-            for port in sorted(lport):
-                service = nm[host][proto][port]
-                results.append({
-                    "port": port,
-                    "state": service["state"],
-                    "name": service["name"],
-                    "product": service.get("product", ""),
-                    "version": service.get("version", "")
-                })
-    return results
+            print(f"Protocol: {proto}")
+            ports = nm[host][proto].keys()
+            for port in sorted(ports):
+                print(f"Port: {port}\tState: {nm[host][proto][port]['state']}")
