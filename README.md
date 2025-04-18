@@ -1,18 +1,19 @@
 # 🔍 VulnHunt
 
-**VulnHunt** is a modular, CLI-based red team toolkit for asset discovery and vulnerability enumeration.  
-It helps you scan open ports and enumerate **active subdomains** using certificate transparency and DNS brute-force.
+**VulnHunt** is an open-source Red Team CLI tool designed for reconnaissance and vulnerability scanning of public-facing assets such as domains and IP addresses. This tool is made for ethical hackers, penetration testers, and security researchers who need efficient and automated security testing.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Port scanner (Nmap wrapper)
-- ✅ Service detection (product/version)
-- ✅ Subdomain enumeration from crt.sh
-- ✅ DNS brute-force with wordlist
-- ✅ Active subdomain filtering (live check)
-- 🧰 Built in Python 3 — portable & extensible
+- 🔍 **Port Scanner** (Nmap wrapper)
+- 🌐 **Subdomain Enumeration** (crt.sh + DNS brute-force)
+- 🕸️ **Web Vulnerability Scanner** (Login panel detection, redirects, HTTP headers, SSL info)
+- 🔓 **Auth Bypass Tester** (Form brute-force with wordlists)
+- 🧭 **Web Crawler** (Extract all links & forms)
+- 📄 **robots.txt Analyzer**
+- 🔐 **SSL & HTTP Security Header Audit**
+- 🚫 **CORS & CSP Misconfiguration Check**
 
 ---
 
@@ -24,42 +25,112 @@ It helps you scan open ports and enumerate **active subdomains** using certifica
 
 Install them with:
 
+1. **Clone this repo:**
 ```bash
-sudo apt update
-sudo apt install nmap python3-pip -y
-pip install -r requirements.txt
--
-sudo apt install python3-venv
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-deactivate
+git clone https://github.com/username/vulnhunt.git
+cd vulnhunt
 ```
 
-## Usage
+2. **Create a virtual environment (optional but recommended):**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-- python main.py <mode> [options]
+3. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
 
-Modes:
-- scan → Port scan
-- subenum → Subdomain enumeration
+## 🛠️ Usage
+
+---
+Run `main.py` with the desired module:
+
+### 🔍 Nmap Scanner
+```bash
+python main.py nmap --target 192.168.1.1
+```
+
+### 🌐 Subdomain Enumeration
+```bash
+python main.py subdomain --url example.com
+python main.py subdomain --url example.com --brute-force
+```
+
+### 🕸️ Web Vulnerability Scanner
+```bash
+python main.py webscan --url https://target.com
+```
+
+### 🔓 Auth Bypass (Login Brute-force)
+```bash
+python main.py auth_bypass --url https://target.com/login --userlist users.txt --passlist passwords.txt
+```
+
+### 🧭 Web Crawler
+```bash
+python main.py crawl --url https://target.com
+```
+
+### 📄 Robots.txt Checker
+```bash
+python main.py robots --url https://target.com
+```
+
+### 🔐 SSL & HTTP Header Audit
+```bash
+python main.py ssl_headers --url https://target.com
+```
+
+### ⚠️ CSP & CORS Check
+```bash
+python main.py csp --url https://target.com
+```
+
+---
   
-## Examples
-Port Scan Example: 
-- python main.py scan scanme.nmap.org --ports 1-1000
-- python main.py 192.168.1.1 --ports 20-1000
+## 📁 Sample Output
 
-Subdomain Enumeration Example:
-- python main.py subenum example.com
+**Subdomain Enumeration:**
+```
+[*] Enumerating subdomains for example.com...
+[+] Found subdomain: admin.example.com
+[+] Found subdomain: dev.example.com
+```
 
-  ` Uses crt.sh and DNS brute-force (wordlists/subdomains.txt) to find live subdomains.`
+**Web Scan:**
+```
+[*] Scanning for web vulnerabilities on https://target.com
+[!] Possible login/admin panel detected at https://target.com/login
+[!] Missing header: X-Frame-Options
+```
 
-## 🛡️ Disclaimer
+**Auth Bypass:**
+```
+[*] Trying admin:admin123
+[*] Trying root:toor
+[+] Possible valid credentials: root:toor
+```
 
-This tool is intended for educational and authorized penetration testing only.
-You are responsible for your actions.
+---
+
+## ⚠️ Disclaimer
+
+This tool is strictly intended for **ethical hacking** and **authorized security testing** only. Unauthorized use against systems you do not own or have permission to test is strictly prohibited.
+
+---
 
 ## 🤝 Contribution
 Feel free to fork and PR!
 Ideas, issues, and feature requests are welcome. Let's build a badass red team toolkit together 🛠️
 
+---
+
+## 🔗 License
+
+MIT License
+
+---
+
+Happy Hunting! 🐍
