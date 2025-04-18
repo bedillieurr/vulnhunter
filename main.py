@@ -1,5 +1,7 @@
 import argparse
-from portscanner import scan_target
+from core.portscanner import scan_target
+from core.subdomain_enum import enumerate_active_subdomains
+
 
 def print_results(results):
     print("\n[+] Scan Results:")
