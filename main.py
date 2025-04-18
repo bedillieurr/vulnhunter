@@ -1,5 +1,5 @@
 import argparse
-from core.portscanner import scan_target
+from portscanner import scan_target
 
 def print_results(results):
     print("\n[+] Scan Results:")
