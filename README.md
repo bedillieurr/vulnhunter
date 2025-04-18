@@ -38,14 +38,28 @@ deactivate
 
 ## Usage
 
-- python main.py <target> [--ports <port_range>]
+- python main.py <mode> [options]
 
-## Examples:
-
-- python main.py scanme.nmap.org
+Modes:
+- scan → Port scan
+- subenum → Subdomain enumeration
+  
+## Examples
+Port Scan Example: 
+- python main.py scan scanme.nmap.org --ports 1-1000
 - python main.py 192.168.1.1 --ports 20-1000
+
+Subdomain Enumeration Example:
+- python main.py subenum example.com
+
+  ` Uses crt.sh and DNS brute-force (wordlists/subdomains.txt) to find live subdomains.`
 
 ## 🛡️ Disclaimer
 
 This tool is intended for educational and authorized penetration testing only.
 You are responsible for your actions.
+
+## 🤝 Contribution
+Feel free to fork and PR!
+Ideas, issues, and feature requests are welcome. Let's build a badass red team toolkit together 🛠️
+
