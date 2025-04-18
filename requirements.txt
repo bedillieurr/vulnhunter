@@ -1,3 +1,11 @@
-python-nmap
 requests
-dnspython
+beautifulsoup4
+lxml
+selenium
+urllib3
+nmap
+certifi
+idna
+chardet
+python-nmap
+colorama
