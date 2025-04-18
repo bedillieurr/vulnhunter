@@ -26,3 +26,10 @@ Install them with:
 sudo apt update
 sudo apt install nmap python3-pip -y
 pip install -r requirements.txt
+
+⚡ Usage
+python main.py <target> [--ports <port_range>]
+
+Examples:
+python main.py scanme.nmap.org
+python main.py 192.168.1.1 --ports 20-1000
