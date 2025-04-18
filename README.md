@@ -26,6 +26,12 @@ Install them with:
 sudo apt update
 sudo apt install nmap python3-pip -y
 pip install -r requirements.txt
+-
+sudo apt install python3-venv
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+deactivate
 ```
 
 ## Usage
