@@ -1,5 +1,6 @@
 import requests
 import dns.resolver
+import os
 from concurrent.futures import ThreadPoolExecutor
 
 def get_subdomains_from_crtsh(domain):
@@ -44,4 +45,24 @@ def enumerate_active_subdomains(domain):
     raw_subs = get_subdomains_from_crtsh(domain)
     active_subs = filter_active_subdomains(raw_subs)
     return active_subs
+    
+def brute_force_subdomains(domain, wordlist_path="wordlists/subdomains.txt", threads=10):
+    print(f"[+] Bruteforcing subdomains for: {domain}")
+    if not os.path.exists(wordlist_path):
+        print(f"[-] Wordlist not found at: {wordlist_path}")
+        return []
 
+    with open(wordlist_path, 'r') as f:
+        words = [line.strip() for line in f if line.strip()]
+    
+    brute_targets = [f"{word}.{domain}" for word in words]
+    active_subs = filter_active_subdomains(brute_targets, threads=threads)
+    return active_subs
+
+def enumerate_active_subdomains(domain):
+    crtsh_subs = get_subdomains_from_crtsh(domain)
+    brute_subs = brute_force_subdomains(domain)
+
+    combined = set(crtsh_subs + brute_subs)
+    active = filter_active_subdomains(combined)
+    return active
