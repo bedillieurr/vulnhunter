@@ -1,16 +1,18 @@
 # 🔍 VulnHunt
 
-**VulnHunt** is a modular CLI-based vulnerability scanning tool built for ethical hackers and red teamers. It helps you identify open ports and running services on public IPs/domains — the first step to knowing your attack surface.
+**VulnHunt** is a modular, CLI-based red team toolkit for asset discovery and vulnerability enumeration.  
+It helps you scan open ports and enumerate **active subdomains** using certificate transparency and DNS brute-force.
 
 ---
 
 ## 🚀 Features
 
-- ✅ TCP Port scanning
-- ✅ Service detection (product & version)
-- 📦 Output in human-readable format
-- ⚙️ Built with Python and Nmap
-- 🔒 Ethical hacking use only
+- ✅ Port scanner (Nmap wrapper)
+- ✅ Service detection (product/version)
+- ✅ Subdomain enumeration from crt.sh
+- ✅ DNS brute-force with wordlist
+- ✅ Active subdomain filtering (live check)
+- 🧰 Built in Python 3 — portable & extensible
 
 ---
 
