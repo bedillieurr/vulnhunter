@@ -8,3 +8,7 @@ dev
 api
 secure
 portal
+app
+staging
+beta
+support
