@@ -1,0 +1,4 @@
+- Fork → feature branch → PR
+- Add tests for new features
+- Keep default behavior **passive-first**
+- Respect ethics & legal rules: every active scan must be **opt-in** and documented
