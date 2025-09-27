@@ -1,6 +1,6 @@
-# 🔍 VulnHunt
+# 🔍 VulnHunter
 
-**VulnHunt** is an open-source Red Team CLI tool designed for reconnaissance and vulnerability scanning of public-facing assets such as domains and IP addresses. This tool is made for ethical hackers, penetration testers, and security researchers who need efficient and automated security testing.
+**VulnHunter** is an open-source Red Team CLI tool designed for reconnaissance and vulnerability scanning of public-facing assets such as domains and IP addresses. This tool is made for ethical hackers, penetration testers, and security researchers who need efficient and automated security testing.
 
 ---
 
