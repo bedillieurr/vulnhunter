@@ -10,11 +10,11 @@ jobs:
         with:
           python-version: "3.11"
 
-+      - name: Install deps
-         run: |
-           python -m pip install --upgrade pip
-           pip install -r requirements.txt
-+          pip install -e .
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e .
 
       - name: Run tests
         run: |
