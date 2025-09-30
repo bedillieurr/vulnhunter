@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vulnhunter"
+version = "0.1.0"
+description = "Modular recon & vulnerability prioritization toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+# dependencies intentionally left empty here; use requirements.txt for development
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vulnhunter*"]
